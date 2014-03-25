@@ -1,4 +1,4 @@
-package org.trythread;
+package org.threadtester;
 
 public class ThreadTester {
 

@@ -1,11 +1,10 @@
-package org.trythread;
+package org.syncthreading;
 
-import javax.swing.plaf.metal.MetalBorders.Flush3DBorder;
 
 public class ConsumeInteger extends Thread{
-	private HoldIntegerUnsync consumerHold;
+	private HoldIntegerSync consumerHold;
 	
-	public ConsumeInteger(HoldIntegerUnsync h)
+	public ConsumeInteger(HoldIntegerSync h)
 	{
 		super("ConsumerInteger");
 		consumerHold = h;

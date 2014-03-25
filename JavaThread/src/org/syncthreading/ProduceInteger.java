@@ -1,10 +1,11 @@
-package org.trythread;
+package org.syncthreading;
+
 
 public class ProduceInteger extends Thread{
 	
-	private HoldIntegerUnsync producerHold;
+	private HoldIntegerSync producerHold;
 	
-	public ProduceInteger(HoldIntegerUnsync h)
+	public ProduceInteger(HoldIntegerSync h)
 	{
 		super("ProduceInteger");
 		producerHold = h;
