@@ -8,6 +8,7 @@ public class HoldIntegerUnsync {
 	public void setSharedInt(int value) {
 		System.out.println(Thread.currentThread().getName() + 
 				" setting sharedInt to " + value);
+		System.out.flush();
 		
 		sharedInt = value;
 	}
@@ -15,6 +16,7 @@ public class HoldIntegerUnsync {
 	public int getSharedInt() {
 		System.out.println(Thread.currentThread().getName() +
 				" retrieving sharedInt value " + sharedInt);
+		System.out.flush();
 		
 		return sharedInt;
 	}

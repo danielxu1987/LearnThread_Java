@@ -13,5 +13,7 @@ public class SharedCell {
 		
 		producer.start();
 		consumer.start();
+		
+		System.out.println("\n--Main function completes");
 	}
 }

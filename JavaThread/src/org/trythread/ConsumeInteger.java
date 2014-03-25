@@ -1,5 +1,7 @@
 package org.trythread;
 
+import javax.swing.plaf.metal.MetalBorders.Flush3DBorder;
+
 public class ConsumeInteger extends Thread{
 	private HoldIntegerUnsync consumerHold;
 	
@@ -11,24 +13,29 @@ public class ConsumeInteger extends Thread{
 	
 	public void run()
 	{
-		int value, sum = 0;
+		int value, interval = 0, sum = 0;
 		
 		do {
 			// sleep for a random interval
 			try 
 			{
-				Thread.sleep((int)(Math.random() * 3000));
-			} 
+				interval = (int)(Math.random() * 3000);
+				Thread.sleep((interval));
+			}
 			catch (Exception ex) 
 			{
 				System.out.println(ex.toString());
 			}
 			
+			System.out.println("--Consumer Thread was put to sleep for " + 
+					interval + " milliseconds");
+			
 			value = consumerHold.getSharedInt();
 			sum += value;
 		} while (value != 10);
 		
-		System.out.println(getName() + " retrieved values totaling: " + 
-				sum + "\nTerminating " + getName());
+		System.out.println("--" + getName() + " retrieved values totaling: " + 
+				sum + "\n--Terminating " + getName());
+		System.out.flush();
 	}
 }
