@@ -2,9 +2,9 @@ package org.syncthreading;
 
 
 // show multiple threads modifying shared object
-public class SharedCell {
-	
-	public SharedCell()
+public class SharedCell_Sync 
+{	
+	public SharedCell_Sync()
 	{
 		HoldIntegerSync holder = new HoldIntegerSync();
 		

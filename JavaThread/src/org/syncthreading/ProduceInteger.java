@@ -1,9 +1,10 @@
 package org.syncthreading;
 
 
-public class ProduceInteger extends Thread{
-	
+public class ProduceInteger extends Thread
+{	
 	private HoldIntegerSync producerHold;
+	public static double pStartMoment;
 	
 	public ProduceInteger(HoldIntegerSync h)
 	{
@@ -14,6 +15,8 @@ public class ProduceInteger extends Thread{
 	@Override
 	public void run() 
 	{
+		pStartMoment = System.currentTimeMillis();
+		
 		for(int count = 1; count <= 10; count++)
 		{
 			int interval = 0;

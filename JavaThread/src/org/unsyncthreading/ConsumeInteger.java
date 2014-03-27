@@ -1,6 +1,6 @@
 package org.unsyncthreading;
 
-import javax.swing.plaf.metal.MetalBorders.Flush3DBorder;
+import org.circularbufferthreading.ProduceIntegerBuffer;
 
 
 public class ConsumeInteger extends Thread{
@@ -37,6 +37,7 @@ public class ConsumeInteger extends Thread{
 		
 		System.out.println("--" + getName() + " retrieved values totaling: " + 
 				sum + "\n--Terminating " + getName());
+		
 		System.out.flush();
 	}
 }

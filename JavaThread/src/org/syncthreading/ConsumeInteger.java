@@ -1,5 +1,7 @@
 package org.syncthreading;
 
+import org.circularbufferthreading.ProduceIntegerBuffer;
+
 
 public class ConsumeInteger extends Thread{
 	private HoldIntegerSync consumerHold;
@@ -33,8 +35,19 @@ public class ConsumeInteger extends Thread{
 			sum += value;
 		} while (value != 10);
 		
+		// count total time (in seconds) of producing and consuming
+		double cStopMoment = System.currentTimeMillis();
+		
+		double totalTime = (cStopMoment - 
+				ProduceInteger.pStartMoment) / 1000.0;
+		
 		System.out.println("--" + getName() + " retrieved values totaling: " + 
 				sum + "\n--Terminating " + getName());
+		
+		System.out.println("Total time for producing and consuming is " + 
+						totalTime + " seconds.");
+				
+		
 		System.out.flush();
 	}
 }

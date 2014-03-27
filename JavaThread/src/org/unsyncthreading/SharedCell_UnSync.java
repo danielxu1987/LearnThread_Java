@@ -2,9 +2,9 @@ package org.unsyncthreading;
 
 
 // show multiple threads modifying shared object
-public class SharedCell {
+public class SharedCell_UnSync {
 	
-	public SharedCell()
+	public SharedCell_UnSync()
 	{
 		HoldIntegerUnsync holder = new HoldIntegerUnsync();
 		
